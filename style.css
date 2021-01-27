@@ -1,0 +1,11 @@
+.box-latest {
+    padding-top: calc(3 / 3 * 70%);
+    background-size: contain ;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* hide the imges from computer side*/
+  #computer-side {
+      visibility: hidden;
+  }

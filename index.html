@@ -18,19 +18,43 @@
     <!-- add icon link -->
     <link rel="icon" href="images/img-logo.png" type="image/x-icon" />
     <title>Rock Paper Scissor Game</title>
+
+    <script src="custom.js"></script>
 </head>
 <body class="bg-info">
     <div class="row">
         <div class="col-12 mt-5">
             <h1 class="text-center text-white text-capitalize text-center font-weight-bold">Round 1</h1>
         </div>  
-        <div class="col-6 mt-3">
+        <div class="col-6 mt-3 user-side">
             <h1 class="text-center text-white text-capitalize text-center font-weight-bold">Your Score</h1>
+            <div class="row">
+                <div class="col-md-4 mt-5">
+                    <div class="box-latest mb-4" style="background-image: url('./images/rock.png')"></div>
+                </div>
+                <div class="col-md-4 mt-5">
+                    <div class="box-latest mb-4" style="background-image: url('./images/paper.png')"></div>
+                </div>
+                <div class="col-md-4 mt-5">
+                    <div class="box-latest mb-4" style="background-image: url('./images/scissor.png')"></div>
+                </div>
+            </div>
         </div>
         <div class="col-6 mt-3">
             <h1 class="text-center text-white text-capitalize text-center font-weight-bold">Opponent Score</h1>
+            <div class="row" id="computer-side">
+                <div class="col-md-4 mt-5" >
+                </div>
+                <div class="col-md-4 mt-5" >
+                    <div class="box-latest mb-4 text-center" id="rockCom" style="background-image: url('./images/rock.png')"></div>
+                </div>
+                <div class="col-md-4 mt-5" >
+                </div>
+            </div>
+            <div class="col-12 text-center">
+                <button onclick="showIt()" class="btn btn-primary" id="randomPick">Random Pick</button>
+            </div>
         </div>
     </div>
-    
 </body>
 </html>

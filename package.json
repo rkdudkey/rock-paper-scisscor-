@@ -1,0 +1,12 @@
+{
+  "name": "practice-js",
+  "version": "1.0.0",
+  "description": "for practice",
+  "main": "practice.js",
+  "scripts": {
+    "start": "node ./custom.js",
+    "custom": "echo \"Error: no test specified\""
+  },
+  "author": "",
+  "license": "ISC"
+}
