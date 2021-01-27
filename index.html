@@ -39,9 +39,9 @@
             </div>
             <!--user button-->
             <div class="col-12 text-center">
-                <button onclick="choiceDisplay('images/rock.png')" class="btn btn-primary" id="rockUser"> Rock</button>
-                <button onclick="choiceDisplay('images/paper.png')" class="btn btn-primary" id="paperUser" >Paper</button>
-                <button onclick="choiceDisplay('images/scissor.png')" class="btn btn-primary" id="scrissorUser">Scissor</button>
+                <button onclick="choiceDisplay('images/games2.png')" class="btn btn-primary" id="rockUser"> Rock</button>
+                <button onclick="choiceDisplay('images/games1.png')" class="btn btn-primary" id="paperUser" >Paper</button>
+                <button onclick="choiceDisplay('images/games3.png')" class="btn btn-primary" id="scrissorUser">Scissor</button>
             </div>
         
         </div>
@@ -49,17 +49,17 @@
         <!--opponent-->
         <div class="col-6 mt-3">
             <h1 class="text-center text-white text-capitalize text-center font-weight-bold">Opponent Score</h1>
-            <div class="row" id="computer-side">
+            <div class="row container-user">
                 <div class="col-md-4 mt-5" >
                 </div>
                 <div class="col-md-4 mt-5" >
-                    <div class="box-latest mb-4 text-center" id="rockCom" style="background-image: url('./images/rock.png')"></div>
+                    <img class="card-img-top mb-5" id="img-opponent" src="images/preview.png" alt="preview-image">
                 </div>
                 <div class="col-md-4 mt-5" >
                 </div>
             </div>
             <div class="col-12 text-center">
-                <button onclick="showIt()" class="btn btn-primary" id="randomPick">Random Pick</button>
+                <button onclick="getRandomImages()" class="btn btn-primary" id="randomPick">Random Pick</button>
             </div>
         </div>
     </div>

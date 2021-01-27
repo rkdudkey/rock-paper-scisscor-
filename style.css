@@ -3,6 +3,9 @@
     background-size: contain ;
     background-position: center;
     background-repeat: no-repeat;
+    
   }
 
- 
+ .container-user {
+     height: 350px;
+ }
