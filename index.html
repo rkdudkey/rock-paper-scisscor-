@@ -24,16 +24,16 @@
 <body class="bg-info">
     <div class="row">
         <div class="col-12 mt-5">
-            <h1 class="text-center text-white text-capitalize text-center font-weight-bold round">Round 1</h1>
+            <h1 class="text-center text-white text-capitalize text-center font-weight-bold round">Round 0</h1>
             <h1 class="output text-warning  text-center font-weight-bold mt-3"></h1>
         </div>  
         <!--User Side-->
         <div class="col-6 mt-3 user-side">
             <h1 class="text-center text-white text-capitalize text-center font-weight-bold">Your Score</h1>
-            <div class="text-center">
-            <i class="far fa-star h3 point-user"></i>
-            <i class="far fa-star h3 point-user"></i>
-            <i class="far fa-star h3 point-user"></i>
+            <div class="text-center h3">
+                <i class="far" id="point-user-1"></i>
+                <i class="far" id="point-user-2"></i>
+                <i class="far" id="point-user-3"></i>
             </div>
             <div class="row container-user">
                 <div class="col-md-4 mt-5">
@@ -56,10 +56,10 @@
         <!--opponent side-->
         <div class="col-6 mt-3">
             <h1 class="text-center text-white text-capitalize text-center font-weight-bold">Opponent Score</h1>
-            <div class="text-center">
-                <i class="far fa-star h3 point-com"></i>
-                <i class="far fa-star h3 point-com"></i>
-                <i class="far fa-star h3 point-com"></i>
+            <div class="text-center h3">
+                <i class="far" id="point-com-1"></i>
+                <i class="far" id= "point-com-2"></i>
+                <i class="far" id="point-com-3"></i>
             </div>
             <div class="row container-user">
                 <div class="col-md-4 mt-5" >
@@ -74,7 +74,22 @@
                 <button  class="btn btn-primary" id="randomPick">Random Pick</button>
             </div>
         </div>
+
+        <div class="modal-bg">
+            <div class="modal">
+                <div class="mt-3 mb-3 ml-3 text-center">
+                    <h3>Do you want to play it again ?</h3>
+                    <div class="mt-5 ">
+                        <button class="btn btn-primary text-center" id="play"> Yes</button>
+                        <button class="btn btn-primary text-center" id="stopPlay"> No </button>
+                    </div>              
+                </div>
+               
+            </div>
+        </div>
     </div>
+
+    
 </body>
 <script src="custom.js"></script>
 </html>
