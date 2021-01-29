@@ -1,6 +1,8 @@
 const game = function () {
 
    var round = 0;
+   var playerScore = 0;
+   var computerScore = 0;
    var comHand;
    var personHand;
 
@@ -25,9 +27,7 @@ const game = function () {
       scissorButton.addEventListener('click', () => {
          imageLocation.src = `./images/games3.png`;
          personHand = `images/games3.png`;
-      });
-
-      
+      });    
    }
 
    //random pick choices display
@@ -46,27 +46,62 @@ const game = function () {
                   var num = Math.floor((Math.random() * 3) + 1);
                   imageLocation.src = `images/games${num}.png`;
                   comHand = `images/games${num}.png`;
-                  console.log(comHand);
-                  console.log(getTheWinner(personHand, comHand));
+                  getTheWinner(personHand, comHand);
                }, 2000);
             }
          });
       }) 
    }
 
-   var updateScore = () => {
-      var playerPoint = document.querySelector("point-user");
-      var comPoint = document.querySelector("point-com");
+   var updateScoreUser = () => {
+      //output to show who the winner
+      var output = document.querySelector(".output");
+
+      var point1 = document.getElementById("point-user-1");
+      var point2 = document.getElementById("point-user-2");
+      var point3 = document.getElementById("point-user-3");
+      var pointCom1 = document.getElementById("point-com-1");
+      var pointCom2 = document.getElementById("point-com-2");
+      var pointCom3 = document.getElementById("point-com-3");
+
+      var modalBg = document.querySelector('.modal-bg');
+
+      
+      //counting user scores
+      if(playerScore === 1){
+         point1.innerHTML = "&#xf005;";
+      }  else if (playerScore === 2 ){
+         point2.innerHTML = "&#xf005;";
+      }else if (playerScore === 3 ){
+         point3.innerHTML = "&#xf005;";
+         output.textContent = "Player Wins";
+         setTimeout(() => {
+            modalBg.classList.add('bg-active');
+         },2000);
+        
+      }
+
+      //couting computer score
+      if(computerScore === 1){
+         pointCom1.innerHTML = "&#xf005;";
+      }  else if (computerScore === 2 ){
+         pointCom2.innerHTML = "&#xf005;";
+      }else if (computerScore === 3 ){
+         pointCom3.innerHTML = "&#xf005;";
+         output.textContent = "Computer Wins";
+         setTimeout(() => {
+            modalBg.classList.add('bg-active');
+         },2000);
+      }
    }
+
 
    //check who is the winner 
    var getTheWinner = function (player, computer) {
-      var output = document.querySelector(".output");
       var roundDisplay= document.querySelector(".round");
 
       //tie game
       if(player === computer){
-         output.textContent = "It is a tie";
          round++;
          roundDisplay.textContent ="Round " + round; 
          return;
@@ -75,56 +110,70 @@ const game = function () {
       //Check for Rock
     if (player === "images/games2.png") {
       if (computer === "images/games3.png") {
-        output.textContent = "Player Wins";
         round++;
+        playerScore++;
         roundDisplay.textContent ="Round " + round; 
-        updateScore();
+        updateScoreUser();
         return;
       } else {
-        output.textContent = "Computer Wins";
         round++;
+        computerScore++;
         roundDisplay.textContent ="Round " + round; 
-        updateScore();
+         updateScoreUser();
         return;
       }
     }
     //Check for Paper
     if (player === "images/games1.png") {
       if (computer === "images/games3.png") {
-        output.textContent = "Computer Wins";
         round++;
+        computerScore++;
         roundDisplay.textContent ="Round " + round; 
-        updateScore();
+        updateScoreUser();
         return;
       } else {
-        output.textContent = "Player Wins";
         round++;
+        playerScore++;
         roundDisplay.textContent ="Round " + round; 
-        updateScore();
+        updateScoreUser();
         return;
       }
     }
     //Check for Scissors
     if (player === "images/games3.png") {
       if (computer === "images/games2.png") {
-        output.textContent = "Computer Wins";
         round++;
+        computerScore++;
         roundDisplay.textContent ="Round " + round; 
-        updateScore();
+        updateScoreUser();
         return;
       } else {
-        output.textContent = "Player Wins";
         round++;
+        playerScore++;
         roundDisplay.textContent ="Round " + round;
-        updateScore();
+        updateScoreUser();
         return;
       }
     }
   };
 
+  var rePlay = () => {
+     var play = document.querySelector("#play");
+     var stopPlay = document.querySelector("#stopPlay");
+
+     play.addEventListener("click", () => {
+        window.location.reload();
+     });
+
+     stopPlay.addEventListener("click", () => {
+        window.close();
+     })
+  }
+
    //call the inner function
    choiceDisplay();
    getRandomImages();
+   rePlay()
 
 }
 
