@@ -16,18 +16,25 @@
     <link rel="stylesheet" type="text/css" href="./style.css">
 
     <!-- add icon link -->
-    <link rel="icon" href="images/img-logo.png" type="image/x-icon" />
+    <link rel="icon" href="" type="image/x-icon" />
     <title>Rock Paper Scissor Game</title>
 
-    <script src="custom.js"></script>
+    
 </head>
 <body class="bg-info">
     <div class="row">
         <div class="col-12 mt-5">
-            <h1 class="text-center text-white text-capitalize text-center font-weight-bold">Round 1</h1>
+            <h1 class="text-center text-white text-capitalize text-center font-weight-bold round">Round 1</h1>
+            <h1 class="output text-warning  text-center font-weight-bold mt-3"></h1>
         </div>  
+        <!--User Side-->
         <div class="col-6 mt-3 user-side">
             <h1 class="text-center text-white text-capitalize text-center font-weight-bold">Your Score</h1>
+            <div class="text-center">
+            <i class="far fa-star h3 point-user"></i>
+            <i class="far fa-star h3 point-user"></i>
+            <i class="far fa-star h3 point-user"></i>
+            </div>
             <div class="row container-user">
                 <div class="col-md-4 mt-5">
                 </div>
@@ -39,16 +46,21 @@
             </div>
             <!--user button-->
             <div class="col-12 text-center">
-                <button onclick="choiceDisplay('images/games2.png')" class="btn btn-primary" id="rockUser"> Rock</button>
-                <button onclick="choiceDisplay('images/games1.png')" class="btn btn-primary" id="paperUser" >Paper</button>
-                <button onclick="choiceDisplay('images/games3.png')" class="btn btn-primary" id="scrissorUser">Scissor</button>
+                <button  class="btn btn-primary" id="rockUser"> Rock</button>
+                <button  class="btn btn-primary" id="paperUser" >Paper</button>
+                <button  class="btn btn-primary" id="scissorUser">Scissor</button>
             </div>
         
         </div>
 
-        <!--opponent-->
+        <!--opponent side-->
         <div class="col-6 mt-3">
             <h1 class="text-center text-white text-capitalize text-center font-weight-bold">Opponent Score</h1>
+            <div class="text-center">
+                <i class="far fa-star h3 point-com"></i>
+                <i class="far fa-star h3 point-com"></i>
+                <i class="far fa-star h3 point-com"></i>
+            </div>
             <div class="row container-user">
                 <div class="col-md-4 mt-5" >
                 </div>
@@ -59,9 +71,10 @@
                 </div>
             </div>
             <div class="col-12 text-center">
-                <button onclick="getRandomImages()" class="btn btn-primary" id="randomPick">Random Pick</button>
+                <button  class="btn btn-primary" id="randomPick">Random Pick</button>
             </div>
         </div>
     </div>
 </body>
+<script src="custom.js"></script>
 </html>
